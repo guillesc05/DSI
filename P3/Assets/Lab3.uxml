@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Lab3.uss?fileID=7433441132597879392&amp;guid=df3102093ce19754380a1738210ed3d2&amp;type=3#Lab3" />
+    <ui:VisualElement name="ContenedorVerde" style="flex-grow: 1; justify-content: center; align-self: auto; align-items: center; background-color: rgb(28, 99, 17);">
+        <ui:VisualElement name="ContenedorAzul" style="flex-grow: 1; justify-content: center; align-self: auto; max-height: 80%; height: 100%; min-height: 6%; width: 100%; max-width: 80%; align-items: center; background-color: rgb(35, 49, 200);">
+            <ui:VisualElement name="ItemAmarillo" style="flex-grow: 1; height: 100%; width: 100%; max-width: 60%; max-height: 60%; background-color: rgb(214, 185, 1);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
