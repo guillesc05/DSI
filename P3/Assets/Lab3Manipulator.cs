@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Lab3Manipulator : Manipulator
+public class Lab3Manipulator : MouseManipulator
 {
+    public Lab3Manipulator()
+    {
+        activators.Add(new ManipulatorActivationFilter { button = MouseButton.RightMouse });
+    }
     protected override void RegisterCallbacksOnTarget()
     {
         target.RegisterCallback<MouseDownEvent>(OnMouseDown);
@@ -15,10 +19,13 @@ public class Lab3Manipulator : Manipulator
 
     private void OnMouseDown(MouseDownEvent mev)
     {
-        target.style.borderBottomColor = Color.white;
-        target.style.borderLeftColor = Color.white;
-        target.style.borderRightColor = Color.white;
-        target.style.borderTopColor = Color.white;
-        mev.StopPropagation();
+        if (CanStartManipulation(mev))
+        {
+            target.style.borderBottomColor = Color.white;
+            target.style.borderLeftColor = Color.white;
+            target.style.borderRightColor = Color.white;
+            target.style.borderTopColor = Color.white;
+            mev.StopPropagation();
+        }
     }
 }

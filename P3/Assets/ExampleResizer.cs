@@ -54,8 +54,8 @@ public class ExampleResizer: PointerManipulator
         if (!m_Active || !target.HasPointerCapture(m_PointerId)) return;
         Vector2 diff = e.localPosition - m_Start;
 
-        target.style.top = m_StartSize.y + diff.y;
-        target.style.left = m_StartSize.x + diff.x;
+        target.style.height = m_StartSize.y + diff.y;
+        target.style.width = m_StartSize.x + diff.x;
 
         e.StopPropagation();
     }
@@ -69,7 +69,7 @@ public class ExampleResizer: PointerManipulator
 
         m_Active = false;
         target.ReleasePointer(m_PointerId);
-        target.ReleaseMouse();
+        m_PointerId = -1;
         e.StopPropagation();
     }
 }
