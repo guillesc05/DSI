@@ -13,14 +13,11 @@ public class Lab3 : MonoBehaviour
         VisualElement izda = root.Q("Izda");
         VisualElement dcha = root.Q("Dcha");
 
-        izda.AddManipulator(new Lab3Manipulator());
-        dcha.AddManipulator(new Lab3Manipulator());
-
         List<VisualElement> lveizda = izda.Children().ToList();
         List<VisualElement> lvedcha = dcha.Children().ToList();
 
-        lveizda.ForEach(elem=> elem.AddManipulator(new Lab3Manipulator()));
-        lvedcha.ForEach(elem=> elem.AddManipulator(new Lab3Manipulator()));
+        lveizda.ForEach(elem=> elem.Children().ToList().ForEach(elemI => elemI.AddManipulator(new Lab3Manipulator())));
+        lvedcha.ForEach(elem => elem.Children().ToList().ForEach(elemI => elemI.AddManipulator(new Lab3Manipulator())));
 
         izda.RegisterCallback<ClickEvent>(
             ev =>

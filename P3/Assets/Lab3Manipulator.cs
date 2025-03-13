@@ -1,5 +1,3 @@
-
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -15,7 +13,7 @@ public class Lab3Manipulator : Manipulator
         target.UnregisterCallback<MouseDownEvent>(OnMouseDown);
     }
 
-    private void OnMouseDown (MouseDownEvent mev)
+    private void OnMouseDown(MouseDownEvent mev)
     {
         target.style.borderBottomColor = Color.white;
         target.style.borderLeftColor = Color.white;
