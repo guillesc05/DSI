@@ -17,7 +17,9 @@ public class Lab3 : MonoBehaviour
         List<VisualElement> lvedcha = dcha.Children().ToList();
 
         lveizda.ForEach(elem=> elem.Children().ToList().ForEach(elemI => elemI.AddManipulator(new ExampleResizer())));
+        lveizda.ForEach(elem=> elem.Children().ToList().ForEach(elemI => elemI.AddManipulator(new HoverManipulator())));
         lvedcha.ForEach(elem => elem.Children().ToList().ForEach(elemI => elemI.AddManipulator(new ExampleDragger())));
+        lvedcha.ForEach(elem => elem.Children().ToList().ForEach(elemI => elemI.AddManipulator(new HoverManipulator())));
 
         izda.RegisterCallback<ClickEvent>(
             ev =>
