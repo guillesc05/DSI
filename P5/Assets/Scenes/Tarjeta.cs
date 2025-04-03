@@ -1,18 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class Tarjeta : MonoBehaviour
+namespace Lab5b_namespace
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Tarjeta
     {
-        
-    }
+        Individuo miIndividuo;
+        VisualElement tarjetaRoot;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Label nombreLabel;
+        Label apellidoLabel;
+
+        public Tarjeta(VisualElement tarjetaRoot, Individuo individuo)
+        {
+            this.tarjetaRoot = tarjetaRoot;
+            this.miIndividuo = individuo;
+
+            nombreLabel = tarjetaRoot.Q<Label>("Nombre");
+            apellidoLabel = tarjetaRoot.Q<Label>("Apellido");
+
+            UpdateUI();
+
+            miIndividuo.Cambio += UpdateUI;
+        }
+
+        void UpdateUI()
+        {
+            nombreLabel.text = miIndividuo.Nombre;
+            apellidoLabel.text = miIndividuo.Apellido;
+        }
     }
 }
