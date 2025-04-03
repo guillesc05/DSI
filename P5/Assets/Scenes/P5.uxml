@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<engine:UXML
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:engine="UnityEngine.UIElements"
-    xmlns:editor="UnityEditor.UIElements"
-    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
->
-    
-</engine:UXML>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="contenedor" style="flex-grow: 1; flex-direction: row;">
+        <ui:VisualElement name="Izda" style="flex-grow: 1; -unity-background-image-tint-color: rgb(212, 152, 49); background-color: rgb(221, 159, 41);">
+            <ui:VisualElement name="header" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Pou.png?fileID=2800000&amp;guid=60de3d08c7d8a4b4889dc71dcccf2f15&amp;type=3#Pou&quot;);" />
+            <ui:VisualElement name="body" style="flex-grow: 1;">
+                <ui:TextField picking-mode="Ignore" label="Nombre&#10;" value="mete el nombre" name="InputNombre" />
+            </ui:VisualElement>
+            <ui:VisualElement name="footer" style="flex-grow: 1;">
+                <ui:TextField picking-mode="Ignore" label="Apellido" value="metase el apellido aqui" name="InputApellido" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="Dcha" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>
