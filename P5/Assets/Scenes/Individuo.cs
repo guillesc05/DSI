@@ -1,18 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Individuo : MonoBehaviour
+namespace Lab5b_namespace
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Individuo
     {
-        
-    }
+        public event Action Cambio;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private string nombre;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { 
+                if(value != nombre)
+                {
+                    nombre = value;
+                    Cambio?.Invoke();
+                }
+            }
+        }
+
+        private string apellido;
+
+        public string Apellido
+        {
+            get { return apellido; }
+            set
+            {
+                if (value != apellido)
+                {
+                    apellido = value;
+                    Cambio?.Invoke();
+                }
+            }
+        }
+
+        public Individuo(string nombre, string apellido)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+        }
+
     }
 }
