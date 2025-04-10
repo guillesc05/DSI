@@ -18,6 +18,12 @@ namespace Lab5b_namespace
 
             nombreLabel = tarjetaRoot.Q<Label>("Nombre");
             apellidoLabel = tarjetaRoot.Q<Label>("Apellido");
+            tarjetaRoot.userData = miIndividuo;
+
+            tarjetaRoot
+                .Query(className: "tarjeta")
+                .Descendents<VisualElement>()
+                .ForEach(elem =>elem.pickingMode = PickingMode.Ignore);
 
             UpdateUI();
 
