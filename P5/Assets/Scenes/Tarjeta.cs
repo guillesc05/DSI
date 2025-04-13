@@ -10,6 +10,7 @@ namespace Lab5b_namespace
 
         Label nombreLabel;
         Label apellidoLabel;
+        VisualElement image;
 
         public Tarjeta(VisualElement tarjetaRoot, Individuo individuo)
         {
@@ -18,6 +19,7 @@ namespace Lab5b_namespace
 
             nombreLabel = tarjetaRoot.Q<Label>("Nombre");
             apellidoLabel = tarjetaRoot.Q<Label>("Apellido");
+            image = tarjetaRoot.Q<VisualElement>("top");
             tarjetaRoot.userData = miIndividuo;
 
             tarjetaRoot
@@ -34,6 +36,8 @@ namespace Lab5b_namespace
         {
             nombreLabel.text = miIndividuo.Nombre;
             apellidoLabel.text = miIndividuo.Apellido;
+            image.style.backgroundImage = miIndividuo.Image;
+            Debug.Log(miIndividuo.Image);
         }
     }
 }

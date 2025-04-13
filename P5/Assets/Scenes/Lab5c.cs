@@ -18,6 +18,7 @@ public class Lab5c : MonoBehaviour
     TextField input_nombre;
     TextField input_apellido;
 
+
     private void OnEnable()
     {
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
@@ -35,6 +36,9 @@ public class Lab5c : MonoBehaviour
         VisualElement panelDcha = root.Q("Dcha");
         panelDcha.RegisterCallback<ClickEvent>(SeleccionTarjeta);
 
+        VisualElement imageIz = root.Q("Izda").Q("header");
+        imageIz.RegisterCallback<ClickEvent>(SeleccionImagen);
+
         //plantilla.RegisterCallback<ClickEvent>(SeleccionIndividuo);
         input_nombre.RegisterCallback<ChangeEvent<string>>(CambioNombre);
         input_apellido.RegisterCallback<ChangeEvent<string>>(CambioApellido);
@@ -50,6 +54,13 @@ public class Lab5c : MonoBehaviour
 
         input_nombre.SetValueWithoutNotify(selecIndividuo.Nombre);
         input_apellido.SetValueWithoutNotify(selecIndividuo.Apellido);
+    }
+
+    void SeleccionImagen(ClickEvent e)
+    {
+        var imagen = (e.target as VisualElement).style.backgroundImage;
+        Debug.Log(imagen);
+        //selecIndividuo.Image = new StyleBackground(imagen.sprite);
     }
 
     void InitializeUI()

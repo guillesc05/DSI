@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Lab5b_namespace
 {
@@ -8,6 +9,8 @@ namespace Lab5b_namespace
         public event Action Cambio;
 
         private string nombre;
+
+        private StyleBackground image;
 
         public string Nombre
         {
@@ -31,6 +34,19 @@ namespace Lab5b_namespace
                 if (value != apellido)
                 {
                     apellido = value;
+                    Cambio?.Invoke();
+                }
+            }
+        }
+
+        public StyleBackground Image
+        {
+            get { return  image; }
+            set
+            {
+                if(value != image)
+                {
+                    image = value;
                     Cambio?.Invoke();
                 }
             }
