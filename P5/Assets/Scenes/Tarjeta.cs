@@ -37,7 +37,6 @@ namespace Lab5b_namespace
             nombreLabel.text = miIndividuo.Nombre;
             apellidoLabel.text = miIndividuo.Apellido;
             image.style.backgroundImage = miIndividuo.Image;
-            Debug.Log(miIndividuo.Image);
         }
     }
 }

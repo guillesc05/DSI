@@ -18,6 +18,10 @@ public class Lab5c : MonoBehaviour
     TextField input_nombre;
     TextField input_apellido;
 
+    public Texture2D img1;
+    public Texture2D img2;
+    public Texture2D img3;
+
 
     private void OnEnable()
     {
@@ -35,6 +39,10 @@ public class Lab5c : MonoBehaviour
 
         VisualElement panelDcha = root.Q("Dcha");
         panelDcha.RegisterCallback<ClickEvent>(SeleccionTarjeta);
+
+        root.Q("img1").style.backgroundImage = img1;
+        root.Q("img2").style.backgroundImage = img2;
+        root.Q("img3").style.backgroundImage = img3;
 
         VisualElement imageIz = root.Q("Izda").Q("header");
         imageIz.RegisterCallback<ClickEvent>(SeleccionImagen);
@@ -58,9 +66,9 @@ public class Lab5c : MonoBehaviour
 
     void SeleccionImagen(ClickEvent e)
     {
-        var imagen = (e.target as VisualElement).style.backgroundImage;
+        var imagen = (e.target as VisualElement).style.backgroundImage.value.texture;
         Debug.Log(imagen);
-        //selecIndividuo.Image = new StyleBackground(imagen.sprite);
+        selecIndividuo.Image = imagen;
     }
 
     void InitializeUI()
