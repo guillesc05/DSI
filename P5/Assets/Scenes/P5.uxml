@@ -13,43 +13,6 @@
                 <ui:TextField picking-mode="Ignore" label="Apellido" value="metase el apellido aqui" name="InputApellido" />
             </ui:VisualElement>
         </ui:VisualElement>
-        <ui:VisualElement name="Dcha" style="flex-grow: 1; width: 50%; flex-direction: row; align-items: stretch; justify-content: center; align-self: stretch;">
-            <ui:VisualElement name="Tarjeta1" class="tarjeta" style="height: auto; align-self: auto; justify-content: flex-start; align-items: stretch; width: 25%; position: relative;">
-                <ui:VisualElement name="top" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/solbadguy.png?fileID=2800000&amp;guid=69ad6cb16cc3e504097eb6c7cf982465&amp;type=3#solbadguy&quot;); height: 33%;" />
-                <ui:VisualElement name="mid" style="flex-grow: 1; height: 33%; background-color: rgb(255, 45, 45); width: auto;">
-                    <ui:Label tabindex="-1" text="Pepito" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nombre" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-                <ui:VisualElement name="bottom" style="flex-grow: 1; height: 33%; background-color: rgb(185, 158, 100);">
-                    <ui:Label tabindex="-1" text="Perez" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Apellido" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="Tarjeta2" class="tarjeta" style="height: auto; width: 25%;">
-                <ui:VisualElement name="top" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/solbadguy.png?fileID=2800000&amp;guid=69ad6cb16cc3e504097eb6c7cf982465&amp;type=3#solbadguy&quot;); height: 33%;" />
-                <ui:VisualElement name="mid" style="flex-grow: 1; height: 33%; background-color: rgb(255, 45, 45);">
-                    <ui:Label tabindex="-1" text="Pepito" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nombre" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-                <ui:VisualElement name="bottom" style="flex-grow: 1; height: 33%; background-color: rgb(185, 158, 100);">
-                    <ui:Label tabindex="-1" text="Perez" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Apellido" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="Tarjeta3" class="tarjeta" style="height: auto; width: 25%;">
-                <ui:VisualElement name="top" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/solbadguy.png?fileID=2800000&amp;guid=69ad6cb16cc3e504097eb6c7cf982465&amp;type=3#solbadguy&quot;); height: 33%;" />
-                <ui:VisualElement name="mid" style="flex-grow: 1; height: 33%; background-color: rgb(255, 45, 45);">
-                    <ui:Label tabindex="-1" text="Pepito" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nombre" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-                <ui:VisualElement name="bottom" style="flex-grow: 1; height: 33%; background-color: rgb(185, 158, 100);">
-                    <ui:Label tabindex="-1" text="Perez" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Apellido" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-            <ui:VisualElement name="Tarjeta4" class="tarjeta" style="height: auto; width: 25%;">
-                <ui:VisualElement name="top" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/solbadguy.png?fileID=2800000&amp;guid=69ad6cb16cc3e504097eb6c7cf982465&amp;type=3#solbadguy&quot;); height: 33%;" />
-                <ui:VisualElement name="mid" style="flex-grow: 1; height: 33%; background-color: rgb(255, 45, 45);">
-                    <ui:Label tabindex="-1" text="Pepito" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Nombre" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-                <ui:VisualElement name="bottom" style="flex-grow: 1; height: 33%; background-color: rgb(185, 158, 100);">
-                    <ui:Label tabindex="-1" text="Perez" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Apellido" style="-unity-text-align: upper-center; -unity-font-style: bold;" />
-                </ui:VisualElement>
-            </ui:VisualElement>
-        </ui:VisualElement>
+        <ui:VisualElement name="Dcha" style="flex-grow: 1; width: 50%; flex-direction: row; align-items: stretch; justify-content: center; align-self: stretch;" />
     </ui:VisualElement>
 </ui:UXML>
