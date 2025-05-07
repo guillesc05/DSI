@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Lab6
+namespace Lab5b_namespace
 {
     public class Tarjeta
     {
