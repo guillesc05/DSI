@@ -5,9 +5,14 @@ using Lab5c_namespace;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+[System.Serializable]
+public class SerializableList<T>
+{
+    public List<T> list;
+}
 public class Lab5c : MonoBehaviour
 {
-    List<Individuo> individuos;
+    SerializableList<Individuo> individuos = new SerializableList<Individuo>();
     Individuo selecIndividuo;
 
     VisualElement tarjeta1;
@@ -25,6 +30,7 @@ public class Lab5c : MonoBehaviour
 
     private void OnEnable()
     {
+        individuos.list = new List<Individuo>();
         VisualElement root = GetComponent<UIDocument>().rootVisualElement;
 
         tarjeta1 = root.Q("Tarjeta1");
@@ -35,7 +41,7 @@ public class Lab5c : MonoBehaviour
         input_nombre = root.Q<TextField>("InputNombre");
         input_apellido = root.Q<TextField>("InputApellido");
 
-        individuos = BaseDatos.getData();
+        individuos.list = BaseDatos.getData();
 
         VisualElement panelDcha = root.Q("Dcha");
         panelDcha.RegisterCallback<ClickEvent>(SeleccionTarjeta);
@@ -73,10 +79,10 @@ public class Lab5c : MonoBehaviour
 
     void InitializeUI()
     {
-        Tarjeta tar1 = new Tarjeta(tarjeta1, individuos[0]);
-        Tarjeta tar2 = new Tarjeta(tarjeta2, individuos[1]);
-        Tarjeta tar3 = new Tarjeta(tarjeta3, individuos[2]);
-        Tarjeta tar4 = new Tarjeta(tarjeta4, individuos[3]);
+        Tarjeta tar1 = new Tarjeta(tarjeta1, individuos.list[0]);
+        Tarjeta tar2 = new Tarjeta(tarjeta2, individuos.list[1]);
+        Tarjeta tar3 = new Tarjeta(tarjeta3, individuos.list[2]);
+        Tarjeta tar4 = new Tarjeta(tarjeta4, individuos.list[3]);
     }
 
     void CambioNombre(ChangeEvent<string> evt)
@@ -87,6 +93,32 @@ public class Lab5c : MonoBehaviour
     {
 
         selecIndividuo.Apellido = evt.newValue;
+    }
+
+    private void OnDisable()
+    {
+        Save();
+    }
+
+    void LoadFromJSON()
+    {
+        var data = System.IO.File.ReadAllText(Application.dataPath + "/tarjetas.json");
+
+        if (data.Length > 0)
+        {
+            Debug.Log(data);
+            var inv = individuos;
+            JsonUtility.FromJsonOverwrite(data, inv);
+        }
+    }
+
+    void Save()
+    {
+        string savedData = JsonUtility.ToJson(individuos);
+        Debug.Log(savedData);
+
+        System.IO.File.WriteAllText(Application.dataPath + "/tarjetas.json", savedData);
+
     }
 
 }
